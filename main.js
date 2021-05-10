@@ -797,7 +797,7 @@ var templateGrid = {
   westborder: "none",
 };
 
-const borderTypes = ["none", "River", "Ocean", "Mountain"];
+const borderTypes = ["none", "River", "Ocean", "Mountains"];
 const biomes = ["Forest", "Plains", "Desert"];
 const borders = ["northborder", "westborder", "southborder", "eastborder"];
 const excludedBuildings = ["Air_Cargo", "Gift_Drone", "Construction_Site"];
@@ -1630,7 +1630,7 @@ function hasEdge(edgeType, i) {
     //check borders
     (edgeType == "Waterway" &&
       (isBorderTile("Ocean", i) || isBorderTile("River", i))) ||
-    (edgeType == "Mountain" && isBorderTile("Mountain", i)) ||
+    (edgeType == "Mountains" && isBorderTile("Mountains", i)) ||
     ((edgeType == "OpenWorld" || edgeType == "Town") &&
       isBorderTile("none", i)) ||
     //check NSEW
@@ -1664,7 +1664,7 @@ function getBorderProperty(borderType) {
       return "Water";
     case "Ocean":
       return "Salty";
-    case "Mountain":
+    case "Mountains":
       return "Shady";
   }
 }
