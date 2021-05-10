@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script
+      src="https://kit.fontawesome.com/6211ff8657.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./townstarobjects.js"></script>
+    <script src="./recipes.js"></script>
+    <script src="./maps.js"></script>
+    <script src="./templateutilities.js"></script>
+    <script src="./main.js"></script>
+  </head>
+  <body onload="initialize()">
+    <div class="maincontainer">
+      <div class="buildingmenu">
+        <div class="categories"></div>
+        <div class="category"></div>
+      </div>
+      <div class="startingtemplatecontrols">
+        <span>Start:&nbsp;</span>
+        <select name="biomes" id="biomes" onchange="updateBiome(this)"></select>
+        <select
+          name="directions"
+          id="directons"
+          onchange="updateDirection(this)"
+        >
+          <option value="north">North</option>
+          <option value="south">South</option>
+          <option value="east">East</option>
+          <option value="west">West</option>
+        </select>
+      </div>
+      <div class="overlaycontrols">
+        <span>Overlay:&nbsp;</span>
+        <select
+          name="overlays"
+          id="overlays"
+          onchange="updateOverlay(this)"
+        ></select>
+      </div>
+      <div class="tileinfo">
+        <div class="tileinfoheader">
+          <div class="tileinfopic"><img /></div>
+          <div class="tileinfotitle"></div>
+        </div>
+        <div class="tileinfobody">
+          <div class="recipes"></div>
+        </div>
+      </div>
+      <div class="importexport">
+        <input
+          type="text"
+          id="importexport"
+          placeholder="paste here"
+          style="width: 65px"
+        />
+        <input type="button" value="Copy" onclick="copyToClipboard()" />
+        <input type="button" value="Load" onclick="importGrid()" />
+        <input type="button" value="Clear" onclick="clearGrid()" />
+      </div>
+      <div id="MainGrid" class="gameboard">
+        <div class="nwcorner"><i></i></div>
+        <div
+          class="northborder"
+          id="northborder"
+          onclick="selectBorder('northborder')"
+        >
+          <i></i>
+        </div>
+        <div class="necorner"><i></i></div>
+        <div
+          class="westborder"
+          id="westborder"
+          onclick="selectBorder('westborder')"
+        >
+          <i></i>
+        </div>
+        <div class="gamegrid"></div>
+        <div
+          class="eastborder"
+          id="eastborder"
+          onclick="selectBorder('eastborder')"
+        >
+          <i></i>
+        </div>
+        <div class="swcorner"><i></i></div>
+        <div
+          class="southborder"
+          id="southborder"
+          onclick="selectBorder('southborder')"
+        >
+          <i></i>
+        </div>
+        <div class="secorner"><i></i></div>
+      </div>
+    </div>
+  </body>
+</html>

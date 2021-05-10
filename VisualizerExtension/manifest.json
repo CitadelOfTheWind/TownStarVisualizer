@@ -1,0 +1,31 @@
+{
+  "name": "Visualizer Extension",
+  "description": "Export your town for use with the Visualizer",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/cotw16.png",
+      "32": "/images/cotw16.png",
+      "48": "/images/cotw16.png",
+      "128": "/images/cotw16.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://app.gala.games/games/town-star/play"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "/images/cotw16.png",
+    "32": "/images/cotw16.png",
+    "48": "/images/cotw16.png",
+    "128": "/images/cotw16.png"
+  },
+  "permissions": ["storage", "activeTab", "scripting"]
+}
